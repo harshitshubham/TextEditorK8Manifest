@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: text-editor-deployment
+  labels:
+    app: text-editor
+spec:
+  replicas: 2 # You can adjust the replica count as needed
+  selector:
+    matchLabels:
+      app: text-editor
+  template:
+    metadata:
+      labels:
+        app: text-editor
+    spec:
+      containers:
+      - name: text-editor-container
+        image: harshitshubham/text-editor:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "500m"
+          limits:
+            memory: "256Mi"
+            cpu: "1"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: text-editor-service
+  labels:
+    app: text-editor
+spec:
+  selector:
+    app: text-editor
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  type: LoadBalancer # Change to NodePort if not using a cloud provider
+
