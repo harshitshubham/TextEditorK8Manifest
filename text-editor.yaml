@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: text-editor-container
-        image: harshitshubham/text-editor:latest
+        image: harshitshubham/text-editor:build-16
         ports:
         - containerPort: 5000
         resources:
