@@ -5,7 +5,7 @@ metadata:
   labels:
     app: text-editor
 spec:
-  replicas: 2 # You can adjust the replica count as needed
+  replicas: 1 # You can adjust the replica count as needed
   selector:
     matchLabels:
       app: text-editor
