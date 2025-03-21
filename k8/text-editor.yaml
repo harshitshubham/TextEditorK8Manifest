@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: text-editor-container
-        image: harshitshubham/notes-app:latest
+        image: harshitshubham/kubernetes-practice:02
         ports:
         - containerPort: 3000
         
