@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: text-editor-container
-        image: harshitshubham/text-editor:build-19
+        image: harshitshubham/notes-app:latest
         ports:
         - containerPort: 5000
         
